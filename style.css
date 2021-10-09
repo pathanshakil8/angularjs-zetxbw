@@ -1,3 +1,13 @@
 h1, p {
   font-family: Lato;
+};
+
+span {
+  margin: 10px;
+  padding: 10px;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
 }

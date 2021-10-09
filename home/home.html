@@ -1,4 +1,38 @@
 <h1>Hello {{$ctrl.name}}!</h1>
-<p>
-  Start editing <b>home/home.html</b> :)
-</p>
+<h2>Candidates</h2>
+<div><input type="checkbox" name="Male" ng-model="male">Male
+  <input type="checkbox" name="Female" ng-model="female">Female
+  <input type="text" placeholder="Whom are you looking for?" />
+</div>
+<br/>
+<div ng-controller="HomeCtrl">
+    <div>
+        <div><span>#</span><span>First Name</span><span>Last Name</span><span>Email</span><span>Gender</span></div>
+        <div ng-repeat="candidate in $ctrl.candidates">
+          <span>
+            {{candidate.id}}
+          </span>
+          <span>
+            {{candidate.first_name}}
+          </span>
+          <span>
+            {{candidate.last_name}}
+          </span>
+          <span>
+            {{candidate.email}}
+          </span>
+          <span>
+            {{candidate.gender}}
+          </span>
+        </div>
+    </div>
+    <div><h2>Add New Candidate</h2></div>
+    <form ng-submit="submit()">
+      <input type="text" placeholder="First Name" name="first_name" />
+      <input type="text" placeholder="Last Name" name="last_name" />
+      <input type="text" placeholder="Email" name="email" />
+      <input type="radio" placeholder="Male" name="gender" />
+      Male<input type="radio" placeholder="Female" name="gender" />
+      Female<input type="submit" value="Submit">
+    </form>
+</div>
